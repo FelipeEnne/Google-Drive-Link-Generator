@@ -26,9 +26,9 @@ function generateLink(e) {
       if (target.value == "") {
         alert("Please generate a Download Link");
       } else {
-        target.select();
-        navigator.clipboard.writeText("text to be copied");
-        alert("Link has been copied to clipboard");
+        navigator.clipboard.writeText(target.value).then(() => {
+          alert("Link has been copied to clipboard");
+        });
       }
     }
 
